@@ -12,21 +12,7 @@ pcl.Range = 90
 pcl.Parent = game.Players.LocalPlayer.Character.Head
 pcl.Enabled = false
 
-if game.PlaceId == 6516141723 then
-    Rayfield:Notify({
-        Title = "WARNING!",
-        Content = "Do NOT execute Doors in the lobby as it could get you permanently banned!",
-        Duration = 30,
-        Image = 4483362458,
-        Actions = {
-            Ignore = {
-                Name = "oh",
-            }
 
-        }
-    })
-    return
-end
 
 
 Rayfield:Notify({
