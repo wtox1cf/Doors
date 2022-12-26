@@ -1,0 +1,75 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+local FullHealth = 100
+local pcl = Instance.new("SpotLight")
+local CF = CFrame.new
+local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
+local ChaseStart = game:GetService("ReplicatedStorage").GameData.ChaseStart
+local TargetWalkspeed = 0
+pcl.Brightness = 1
+pcl.Face = Enum.NormalId.Front
+pcl.Range = 90
+pcl.Parent = game.Players.LocalPlayer.Character.Head
+pcl.Enabled = false
+
+if game.PlaceId == 6516141723 then
+    Rayfield:Notify({
+        Title = "WARNING!",
+        Content = "Do NOT execute Doors in the lobby as it could get you permanently banned!",
+        Duration = 30,
+        Image = 4483362458,
+        Actions = {
+            Ignore = {
+                Name = "oh",
+            }
+
+        }
+    })
+    return
+end
+
+
+Rayfield:Notify({
+    Title = "Version",
+    Content = "1.5.0",
+    Duration = 6.5,
+    Image = 4483362458,
+    Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Okay!",
+            Callback = function()
+            end
+		},
+	},
+})
+
+local Window = Rayfield:CreateWindow({
+	Name = "DOORS Script",
+	LoadingTitle = "psst",
+	LoadingSubtitle = "by SindubsMini",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = "Rayfield Interface Suite",
+		FileName = "SindubsMiniScripts"
+	},
+	KeySystem = false, -- Set this to true to use our key system
+})
+
+-- tabs variables
+local timerTab = Window:CreateTab("Entity Timer", 11372950109)
+local customTab = Window:CreateTab("Custom Entites", 11372950109)
+local everyTab = Window:CreateTab("Entity Every Door", 11372950109)
+local Tab = Window:CreateTab("Spawn Entity", 11372950109)
+local itemsTab = Window:CreateTab("Items", 7734068321)
+local PlayerTab = Window:CreateTab("Player", 4483345998)
+local KeybindsSelction = Window:CreateTab("Keybinds", 4483345998)
+local VisualsTab = Window:CreateTab("Visuals", 4483345998)
+local GameTab = Window:CreateTab("Game", 4483345998)
+local ExtraTab = Window:CreateTab("Extra", 7734042071)
+local InfoTab = Window:CreateTab("Info", 4483345998)
+
+InfoTab:CreateParagraph({Title = "how can I be contacted", Content = "My Discord: netzklap#7566"})
+InfoTab:CreateParagraph({Title = "Changelog", Content = ""})
+InfoTab:CreateParagraph({Title = "06.12.2022", Content = "Rayfield UI!!!"})
+InfoTab:CreateParagraph({Title = "Bugs", Content = "1. Skeleton key doesn't exist at the moment 2. You're uncontrollably fast and its hard to get out of closets, 3. Keybinds for redroom and heartbite minigame"})
+InfoTab:CreateParagraph({Title = "Notes", Content = "nothing"})
